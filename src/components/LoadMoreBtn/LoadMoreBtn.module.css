@@ -1,6 +1,19 @@
-.btn{
-  height: 35px;
-  border-radius: 10px;
-  font-size: medium;
-  background-color: rgba(218, 180, 255, 0.696);
+.btn {
+  display: block;
+  margin: 40px auto;
+  background: transparent;
+  border: 1px solid var(--burgundy);
+  color: var(--burgundy);
+  font-family: var(--font-header);
+  padding: 15px 40px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--burgundy);
+  color: var(--bg-dark);
+  box-shadow: 0 0 20px rgba(91, 6, 16, 0.4);
 }

@@ -1,0 +1,9 @@
+:root {
+  --pearl: #FDFDFD;
+--pearl-shimmer: linear-gradient(135deg, #ffffff 0%, #d1d1d1 50%, #f0f0f0 100%);
+--accent-pearl: #f5f5f5;
+--glass-frosted: rgba(20, 20, 20, 0.4);
+  --font-header: 'Cinzel', serif;
+  --font-editorial: 'Playfair Display', serif;
+  --font-text: 'Montserrat', sans-serif;
+}

@@ -1,18 +1,55 @@
-.box{
+.box {
+  padding: 80px 20px;
   display: flex;
   justify-content: center;
 }
-.input{
-  height: 30px;
-  width: 250px;
-  border-radius: 10px;
-  margin-right: 10px;
-  font-size: medium;
-  background-color: rgba(228, 202, 255, 0.293);
+
+.form {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 8px 8px 8px 30px;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3)
 }
-.submit{
-  height: 35px;
-  border-radius: 10px;
-  font-size: medium;
-  background-color: rgba(218, 180, 255, 0.696);
+
+.input {
+  letter-spacing: 1px;
+  background: transparent;
+  border: none;
+  color: var(--pearl);
+  font-family: var(--font-editorial);
+  font-size: 20px;
+  width: 100%;
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--platinum);
+  opacity: 0.5;
+}
+
+.submit {
+  font-family: var(--font-editorial); 
+  font-size: 20px; 
+  letter-spacing: 1px;
+  font-weight: 700;
+  background-color: #ffffff;
+  color: #000000;
+  mix-blend-mode: screen;
+  border: none;
+  border-radius: 100px;
+  padding: 10px 35px;
+  cursor: pointer;
+  text-transform: none; 
+  
+  transition: all 0.4s ease;
+}
+
+.submit:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }

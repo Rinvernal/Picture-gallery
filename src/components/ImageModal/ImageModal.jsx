@@ -10,19 +10,22 @@ const ImageModal = ({ isOpen, onClose, image }) => {
     <Modal
       isOpen={isOpen}
       onRequestClose={onClose}
+      overlayClassName={s.overlay}
       className={s.modal}
+      ariaHideApp={false}
     >
-      <button className={s.close} onClick={onClose}>
-        Close
+      <button className={s.closeBtn} onClick={onClose}>
+        <svg width="20" height="20" viewBox="0 0 20 20">
+          <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" strokeWidth="1"/>
+        </svg>
       </button>
-      <img
-        src={image.urls.regular}
-        alt={image.alt_description}
-        className={s.image}
-      />
-      <h3>{image.description || "No description available"}</h3>
-      <p>Likes: {image.likes}</p>
-      <p>Author: {image.user.name || "Unknown"}</p>
+      <div className={s.imgWrapper}>
+        <img src={image.urls.regular} alt={image.alt_description} className={s.img} />
+      </div>
+      <div className={s.description}>
+        <h2 className={s.title}>{image.description || "Untitled Artwork"}</h2>
+        <p className={s.author}>Artist: {image.user.name}</p>
+      </div>
     </Modal>
   );
 };

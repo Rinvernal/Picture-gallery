@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-
 import { featchArticles } from "../services/api";
 import Loader from "./Loader/Loader";
 import ErrorMessage from "./ErrorMessage/ErrorMessage";
@@ -17,6 +16,14 @@ const App = () => {
   const [page, setPage] = useState(1)
   const [nbPages, setNbPages] = useState(1)
 
+  useEffect(() => {
+    const body = document.querySelector('body');
+    if (query !== '') {
+      body.classList.add('has-results');
+    } else {
+      body.classList.remove('has-results');
+    }
+  }, [query]);
   useEffect (() => {
     if (page > nbPages) {
       toast("You made it to the end")
@@ -33,12 +40,14 @@ const App = () => {
         setIsLoading(true)
         setIsError(false)
         const { results, total_pages } = await featchArticles(query, page);
-        setImages( prevImages => {
-          const newImages = results.filter(
-            newImage => !prevImages.some(image => image.id === newImage.id)
-          );
-          return [...prevImages, ...newImages];
-        });
+        setImages(prevImages => {
+        const allImages = [...prevImages, ...results];
+        const uniqueImages = allImages.filter((image, index, self) =>
+          index === self.findIndex((t) => t.id === image.id)
+        );
+  
+  return uniqueImages;
+});
         setNbPages(total_pages)
       }
      catch (error) {
@@ -73,6 +82,10 @@ const App = () => {
 
   return (
     <div>
+      <header className="header">
+        <h1>Louvre Archive</h1>
+        <p>Digital collection of world`s visual heritage</p>
+      </header>
       <SearchBar onChangeQuery={handleChangeQuery}/>
       {isLoading && <Loader />}
       <ImageGallery images={images} onImageClick={openModal} />

@@ -1,0 +1,80 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  background-image: url("./assets/bg_img.png") !important;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 30vh;
+  text-align: center;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; 
+  background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+  backdrop-filter: blur(0px);
+  transition: all 0.8s ease-in-out;
+  pointer-events: none;
+}
+.header h1 {
+  font-family: var(--font-header);
+  font-size: 64px;
+  letter-spacing: 12px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+body.has-results {
+  display: block;
+  padding-top: 40px;
+}
+body.has-results::after {
+  backdrop-filter: blur(25px); 
+  background: rgba(0, 0, 0, 0.1); 
+}
+
+.header {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.header p {
+  margin-top: 5px;
+  opacity: 0.6;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, transparent, var(--platinum), transparent);
+  border-radius: 10px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

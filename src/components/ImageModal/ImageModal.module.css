@@ -1,43 +1,98 @@
-.modal {
+.overlay {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  display: flex;
-  transform: translate(-50%, -50%);
-  max-width: 600px;
-  background-color: #fff; 
-  border-radius: 10px; 
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  padding: 20px;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8) !important;
+  backdrop-filter: blur(15px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 9999;
+}
+
+.modal {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px 40px;
+  
   text-align: center;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(25px);
+  
+  max-width: 900px;
+  width: 90%;
+  border-radius: 0;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+
+  max-height: 95vh;
+  overflow-y: auto;
 }
 
-.image {
-  max-width: 100%;
-  max-height: 300px;
+.img {
+  max-width: 90vw;
+  max-height: 70vh;
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 80px;
+  max-height: 65vh; 
   object-fit: contain;
-  border-radius: 8px;
-  margin: 0 auto;
 }
-
-.close {
+.imgWrapper {
+  width: 100%;
   display: flex;
   justify-content: center;
-  background: #c75aeeac;
-  color: #fff;
-  border: none;
-  width: 40px;
-  height: 20px;
-  align-items: center;
-  cursor: pointer;
-  transition: background 0.3s ease;
 }
 
-h3, p {
-  margin: 0;
-  font-size: 16px;
-  color: #333;
+.description {
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  max-width: 80%;
+  color: var(--pearl) !important;
+  font-family: var(--font-header);
+  font-size: 32px;
+  letter-spacing: 8px;
+}
+
+.author {
+  font-family: var(--font-editorial);
+  color: #555;
+  font-style: italic;
+  padding-bottom: 20px;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--pearl);
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: 100;
+}
+
+.closeBtn:hover {
+  background: var(--pearl);
+  color: #000;
+  transform: rotate(90deg);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }

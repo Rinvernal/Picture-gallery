@@ -11,8 +11,8 @@ const SearchBar = ({onChangeQuery}) => {
   return (
     <div className={s.box}>
       <Formik initialValues={initialValues} onSubmit={handelsubmit}>
-        <Form>
-          <Field name='query' 
+        <Form className={s.form}>
+          <Field name='query'
             autoComplete="off" 
             autoFocus 
             placeholder="Search images and photos"
