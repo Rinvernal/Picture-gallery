@@ -83,8 +83,8 @@ const App = () => {
   return (
     <div>
       <header className="header">
-        <h1>Louvre Archive</h1>
-        <p>Digital collection of world`s visual heritage</p>
+        <h1>Pearl Archive</h1>
+        <p>Refined gateway to visual inspiration</p>
       </header>
       <SearchBar onChangeQuery={handleChangeQuery}/>
       {isLoading && <Loader />}
